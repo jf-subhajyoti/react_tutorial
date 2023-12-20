@@ -5,6 +5,7 @@ import BookList from './components/BookList';
 import Book from './components/Book';
 import NewBook from './components/NewBook';
 import NotFound from './components/NotFound';
+import BookLayout from './components/BookLayout';
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
       </nav>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/books'>
+        {/* The component that we want to show in all the component for the books route is placed inside the element of the parent route
+         and the element in the parent route should contain <Outlet/> for the component for the respective path to be rendered */}
+        <Route path='/books' element={<BookLayout />}>
           <Route index element={<BookList />} />
           <Route path=':id' element={<Book />} />
           <Route path='new' element={<NewBook />} />
