@@ -4,6 +4,7 @@ import Home from './components/Home';
 import BookList from './components/BookList';
 import Book from './components/Book';
 import NewBook from './components/NewBook';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/books' element={<BookList />} />
         <Route path='/books/:id' element={<Book />} />
         <Route path='/books/new' element={<NewBook />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   );
